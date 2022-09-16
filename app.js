@@ -4,7 +4,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
 const routes = require('./routes/AuthRoutes')
+
+
+
+
 mongoose.connect('mongodb://localhost:27017/userCredentials');
+mongoose.set("useCreateIndex",true)
 const db = mongoose.connection;
 db.on('error', (err) => {
     console.log(err);
